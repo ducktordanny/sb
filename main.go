@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"flag"
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -23,7 +24,14 @@ func isNameMatching(filenameWithExtension string, audioAttr string) bool {
 
 func getAudioFilePath(audioName *string) string {
 	var audioFilePath string = ""
-	err := filepath.Walk("./audios", func(path string, info os.FileInfo, err error) error {
+	usr, err := os.UserHomeDir()
+	if err != nil {
+		fmt.Println("Error: ", err)
+		os.Exit(1)
+	}
+
+	path := filepath.Join(usr, ".sb/audios")
+	err = filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
