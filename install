@@ -1,0 +1,6 @@
+#! /bin/bash
+
+mkdir ~/.sb
+mkdir ~/.sb/audios
+
+cp ./audios/* ~/.sb/audios/
