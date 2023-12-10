@@ -4,3 +4,5 @@ mkdir ~/.sb
 mkdir ~/.sb/audios
 
 cp ./audios/* ~/.sb/audios/
+
+echo -e "\nStarter audio files moved to `~/.sb/audios`, if you want to add new audios, add it to that folder.\nTo build the program follow this description: https://go.dev/doc/tutorial/compile-install."
